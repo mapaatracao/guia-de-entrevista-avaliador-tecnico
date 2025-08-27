@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia para Avaliadores Técnicos</title>
-    <!-- Favicon adicionado -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'%3E%3Cpath fill-rule='evenodd' d='M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z' clip-rule='evenodd' /%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,31 +33,86 @@
 <body class="bg-gray-50 text-gray-800">
 
     <div class="container mx-auto p-4 sm:p-6 lg:p-8">
-        <header class="text-center mb-8">
-            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Guia para Avaliadores Técnicos</h1>
-            <p class="mt-2 text-lg text-gray-600">Orientações para a realização das entrevistas técnicas.</p>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Modelo de Avaliação de Candidatos(as) para o Time de Engenharia</h1>
+            <p class="mt-2 text-lg text-gray-600">Diretrizes para as entrevistas de Pair Programming e System Design.</p>
         </header>
 
-        <!-- Navegação em Abas -->
-        <div class="mb-8 border-b border-gray-200">
-            <nav class="flex flex-wrap -mb-px" aria-label="Tabs">
-                <button onclick="changeTab('pair-programming')" id="pair-programming-tab" class="tab-active w-full sm:w-auto text-center sm:text-left whitespace-nowrap py-4 px-6 border-b-2 font-semibold text-sm focus:outline-none">
-                    Pair Programming
-                </button>
-                <button onclick="changeTab('system-design')" id="system-design-tab" class="w-full sm:w-auto text-center sm:text-left text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-6 border-b-2 font-semibold text-sm focus:outline-none">
-                    System Design
-                </button>
-            </nav>
-        </div>
-
-        <!-- Conteúdo das Abas -->
         <main>
+            <section class="bg-white p-6 rounded-lg shadow-sm mb-8">
+                <h2 class="text-2xl font-bold mb-4 text-indigo-700">Objetivo</h2>
+                <p class="text-gray-700">
+                    Este documento estabelece as premissas para a avaliação de candidatos(as) no processo seletivo do time de engenharia, utilizando dois modelos de cases: Pair Programming e System Design. O objetivo é garantir uma régua de avaliação mais equilibrada entre as áreas e uma experiência mais uniforme para os candidatos(as), habilitando lideranças e referências técnicas a atuarem nos processos de atração de forma mais uniforme e escalável.
+                </p>
+            </section>
+            
+            <section class="bg-white p-6 rounded-lg shadow-sm mb-8">
+                <h2 class="text-2xl font-bold mb-4 text-indigo-700">Recomendação de Etapas por Cargo</h2>
+                 <div class="overflow-x-auto">
+                    <table class="min-w-full border-collapse border border-gray-200 text-center">
+                        <thead class="bg-indigo-50">
+                            <tr>
+                                <th class="border border-gray-300 p-3 font-semibold text-indigo-800"></th>
+                                <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Dev I</th>
+                                <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Dev II</th>
+                                <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Dev III</th>
+                                <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Spec I</th>
+                                <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Spec II</th>
+                                <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Tech Manager I</th>
+                                <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Spec III</th>
+                                <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Tech Manager II</th>
+                                <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Principal</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm text-gray-700">
+                            <tr class="bg-white">
+                                <td class="border border-gray-200 p-3 font-semibold">Pair Programming</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">🚫</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">🚫</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="border border-gray-200 p-3 font-semibold">System Design</td>
+                                <td class="border border-gray-200 p-3">🚫</td>
+                                <td class="border border-gray-200 p-3">🚫</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                                <td class="border border-gray-200 p-3">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Navegação em Abas -->
+            <div class="mb-8 border-b border-gray-200">
+                <nav class="flex flex-wrap -mb-px" aria-label="Tabs">
+                    <button onclick="changeTab('pair-programming')" id="pair-programming-tab" class="tab-active w-full sm:w-auto text-center sm:text-left whitespace-nowrap py-4 px-6 border-b-2 font-semibold text-sm focus:outline-none">
+                        Pair Programming
+                    </button>
+                    <button onclick="changeTab('system-design')" id="system-design-tab" class="w-full sm:w-auto text-center sm:text-left text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-6 border-b-2 font-semibold text-sm focus:outline-none">
+                        System Design
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Conteúdo das Abas -->
             <!-- Seção Pair Programming -->
             <div id="pair-programming-content" class="tab-content space-y-8">
                 <section class="bg-white p-6 rounded-lg shadow-sm">
                     <h2 class="text-2xl font-bold mb-4 text-indigo-700">O que é o Pair Programming?</h2>
                     <p class="text-gray-700">
-                        A etapa de Pair Programming é um momento crucial que simula um cenário de trabalho colaborativo, avaliando como o(a) candidato(a) resolve problemas, se comunica, recebe e oferece feedback e articula seu raciocínio em tempo real.
+                        A etapa de Pair Programming é um momento crucial que simula um cenário de trabalho colaborativo, avaliando como o(a) candidato(a) resolve problemas, se comunica, recebe e oferece feedback e articula seu raciocínio em tempo real. É uma entrevista técnica onde dois desenvolvedores – o(a) candidato(a) e o(s) entrevistador(es) – trabalham juntos para resolver um problema de codificação.
                     </p>
                 </section>
 
@@ -66,19 +121,18 @@
                         <h3 class="text-xl font-bold mb-4 text-indigo-700">Orientações Gerais para a Avaliação</h3>
                         <ul class="space-y-3 list-disc list-inside text-gray-700">
                             <li><strong>Seja um guia, não um resolvedor:</strong> Seu papel é observar, fazer perguntas estratégicas e oferecer feedback construtivo. Evite "dar a resposta".</li>
-                            <li><strong>Não busque a "solução perfeita":</strong> O principal objetivo é identificar como o candidato pensa e age.</li>
-                            <li><strong>Incentive o diálogo:</strong> Faça perguntas que estimulem o(a) candidato(a) a explicar suas escolhas e desafios.</li>
-                            <li><strong>Adapte o desafio:</strong> Se o exercício for concluído rapidamente, aumente a complexidade do escopo para avaliar a adaptação.</li>
-                            <li><strong>Obrigação Mínima:</strong> O candidato deve realizar pelo menos uma das duas avaliações e atingir a nota mínima para o cargo.</li>
+                            <li><strong>Não busque a "solução perfeita":</strong> O principal objetivo é identificar os pilares e entender como o candidato pensa e age.</li>
+                            <li><strong>Incentive o diálogo:</strong> Faça perguntas que estimulem o(a) candidato(a) a explicar suas escolhas, desafios e próximos passos.</li>
+                            <li><strong>Adapte o desafio:</strong> Se o exercício for concluído rapidamente, aumente a complexidade do escopo para avaliar a capacidade de adaptação.</li>
                         </ul>
                     </section>
                     <section class="bg-white p-6 rounded-lg shadow-sm">
                         <h3 class="text-xl font-bold mb-4 text-indigo-700">Pilares Avaliados</h3>
                         <ul class="space-y-3 list-disc list-inside text-gray-700">
-                            <li><strong>Articulação do Pensamento:</strong> Como o candidato estrutura e verbaliza seu raciocínio.</li>
-                            <li><strong>Entendimento do Problema:</strong> Capacidade de analisar, questionar e decompor o desafio.</li>
-                            <li><strong>Estrutura do Código:</strong> Qualidade, clareza e organização do código produzido.</li>
-                            <li><strong>Autoconsciência:</strong> Habilidade de colaborar, receber feedback e pedir ajuda.</li>
+                            <li><strong>Resolução e Entendimento do Problema:</strong> Capacidade de entender, propor soluções e implementá-las de forma eficaz.</li>
+                            <li><strong>Qualidade e Estrutura do Código:</strong> Avalia se o código é claro, fácil de ler, organizado e segue boas práticas.</li>
+                            <li><strong>Raciocínio Lógico e Articulação do Pensamento:</strong> Como o candidato estrutura seus pensamentos e toma decisões.</li>
+                            <li><strong>Comunicação e Colaboração:</strong> Clareza na comunicação, receptividade a sugestões e capacidade de colaborar.</li>
                         </ul>
                     </section>
                 </div>
@@ -90,45 +144,50 @@
                             <thead class="bg-indigo-50">
                                 <tr>
                                     <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Pilar</th>
-                                    <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Nível 1</th>
-                                    <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Nível 2</th>
-                                    <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Nível 3</th>
-                                    <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Nível 4</th>
-                                    <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Nível 5</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Nota 0</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Nota 1</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Nota 2</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Nota 3</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Nota 4</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-indigo-800">Nota 5</th>
                                 </tr>
                             </thead>
                             <tbody class="text-sm text-gray-700">
                                 <tr class="bg-white">
-                                    <td class="border border-gray-200 p-3 font-semibold align-top">Articulação do Pensamento</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato verbaliza sua linha de raciocínio de forma clara enquanto codifica. Explica suas escolhas e intenções de forma compreensível.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato argumenta sobre as decisões técnicas, discutindo os trade-offs de diferentes abordagens. Pensa em voz alta de forma estruturada, tornando-se um colaborador na ideação.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato lidera a discussão técnica, explicando conceitos complexos e decisões de forma clara e didática. Demonstra poder de mentoria ao guiar o par através do raciocínio.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato demonstra alta organização mental e clareza na comunicação, articulando um plano claro e explicando suas decisões com base em princípios de engenharia de software aplicáveis a um domínio.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Comunica-se de forma sucinta e eficaz. Transmite conceitos técnicos complexos. Divide problemas em partes menores, explicando o processo. Articula a lógica por trás das escolhas técnicas, explicando proativamente suas ações e razões. Demonstra habilidades de ensino e mentoria.</td>
+                                    <td class="border border-gray-200 p-3 font-semibold align-top">Raciocínio Lógico e Articulação do Pensamento</td>
+                                    <td class="border border-gray-200 p-3 align-top">Não verbaliza o raciocínio, não explica escolhas ou intenções.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Verbaliza sua linha de raciocínio de forma clara enquanto codifica. Explica suas escolhas e intenções de forma compreensível.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Argumenta sobre as decisões técnicas, discutindo os trade-offs de diferentes abordagens. Pensa em voz alta de forma estruturada, tornando o par um colaborador na ideação.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Argumenta sobre as decisões técnicas e Lidera a discussão, explicando conceitos complexos e decisões de forma clara e didática. Demonstra potencial de mentoria ao guiar o par através do raciocínio.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Argumenta sobre as suas decisões e Lidera a discussão técnica, explicando conceitos complexos e demonstra alta organização mental e clareza na comunicação, articulando um plano claro e explicando suas decisões com base em princípios de engenharia de software aplicáveis a um domínio.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Argumenta sobre as suas decisões, comunicando-se de forma sucinta e eficaz. Transmite conceitos técnicos complexos. Divide problemas em partes menores, explicando o processo. Articula a lógica por trás das escolhas técnicas. Explica proativamente suas ações e razões. Demonstra habilidades de ensino e mentoria.</td>
                                 </tr>
                                 <tr class="bg-gray-50">
-                                    <td class="border border-gray-200 p-3 font-semibold align-top">Entendimento do Problema</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato faz perguntas pertinentes para esclarecer o escopo e os requisitos básicos do problema antes e durante o desenvolvimento, buscando um plano claro.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato demonstra habilidade em quebrar problemas mais complexos em etapas gerenciáveis. Prioriza o que precisa ser feito para uma entrega de valor incremental e faz perguntas que conectam o problema a um objetivo de negócio.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato demonstra a habilidade de conectar o problema apresentado a um contexto de sistema mais amplo. Discute o impacto da solução e pensa em riscos e dependências hipotéticas.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato demonstra a capacidade de enquadrar o problema em um ecossistema de múltiplos serviços hipotéticos, discutindo APIs, contratos e desafios de integração entre eles.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Faz perguntas no início e durante a entrevista para entender o problema e esclarecer dúvidas, evitando atacar o problema de imediato. Questiona proativamente casos de borda, situações de erro e a complexidade. Demonstra abordagem iterativa (fazer funcionar, melhorar, acelerar). Pensa no ciclo de vida completo do código e demonstra pensamento crítico. Valida suposições ativamente durante toda a entrevista.</td>
+                                    <td class="border border-gray-200 p-3 font-semibold align-top">Resolução e Entendimento do Problema</td>
+                                    <td class="border border-gray-200 p-3 align-top">Não compreende o problema e não propõe soluções.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Faz perguntas pertinentes para esclarecer o escopo e os requisitos básicos do problema antes e durante o desenvolvimento, buscando um plano claro.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Faz perguntas pertinentes para esclarecer o escopo e os requisitos básicos que conectam o problema a um objetivo.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Demonstra habilidade em quebrar o problema em etapas gerenciáveis. Prioriza o que precisa ser feito para uma entrega de valor incremental.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Faz perguntas pertinentes para esclarecer o escopo e os requisitos básicos. Demonstra a habilidade de quebrar o problema em partes e conectar o problema apresentado a um contexto de sistema mais amplo. Discute o impacto da solução e pensa em riscos e dependências hipotéticas.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Faz perguntas no início e durante a entrevista para entender o problema e esclarecer dúvidas, evitando atacar o problema de imediato. Questiona proativamente casos de borda, situações de erro e os tradeoffs. Demonstra abordagem iterativa (fazer funcionar, melhorar, acelerar). Pensa no ciclo de vida completo do código e demonstra pensamento crítico. Valida suposições ativamente durante toda a entrevista.</td>
                                 </tr>
                                 <tr class="bg-white">
-                                    <td class="border border-gray-200 p-3 font-semibold align-top">Estrutura do Código</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato demonstra proficiência em escrever código funcional, legível e organizado em funções/métodos com responsabilidades claras. Mostra preocupação em manter a simplicidade da solução.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato escreve código limpo, idiomático e que segue princípios de design (ex: SOLID básico, padrões simples). Demonstra preocupação com a testabilidade e a manutenibilidade a longo prazo.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato desenvolve uma solução elegante e pragmática, equilibrando excelência técnica com simplicidade e velocidade de entrega. O código proposto evidencia a maturação de padrões de design robustos.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato demonstra profundidade técnica ao projetar uma solução que poderia ser generalizada e servir como uma plataforma ou padrão para outros engenheiros. Evidencia domínio da linguagem e da stack, utilizando seus recursos de forma idiomática e eficaz.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Escreve código de forma organizada, estruturada, limpa, com testes automatizados (separação de preocupações, variáveis e métodos com nomes que fazem sentido, etc.). Pensa em diferentes designs e evita o mais complexo. Foca sempre em manter a simplicidade da solução ao invés de over-engineering. Demonstra fluidez ao refatorar parte da solução durante a entrevista.</td>
+                                    <td class="border border-gray-200 p-3 font-semibold align-top">Qualidade e Estrutura do Código</td>
+                                    <td class="border border-gray-200 p-3 align-top">O código não é funcional, legível, organizado ou não segue boas práticas.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Demonstra proficiência em escrever código funcional, legível e organizado em funções/métodos com responsabilidades claras. Mostra preocupação em manter a simplicidade da solução.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Escreve código limpo, idiomático e que segue princípios de design (ex: SOLID básico, padrões simples). Demonstra preocupação com a testabilidade e manutenibilidade a longo prazo.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Desenvolve uma solução elegante e pragmática, equilibrando excelência técnica com simplicidade e velocidade de entrega. O código proposto evidencia a aplicação de padrões de design robustos.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Demonstra profundidade técnica ao projetar uma solução que poderia ser generalizada e servir como uma plataforma ou padrão para outros "times" ou problemas similares hipotéticos. Evidencia domínio da linguagem e da stack, utilizando seus recursos de forma idiomática e eficaz.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Demonstra proficiência e escreve código de forma organizada, estruturada, limpa, com testes automatizados (separação de preocupações, variáveis e métodos com nomes que fazem sentido, etc). Foca sempre em manter a simplicidade da solução ao invés de over-engineering. Demonstra fluidez ao refatorar partes da solução durante a entrevista.</td>
                                 </tr>
                                 <tr class="bg-gray-50">
-                                    <td class="border border-gray-200 p-3 font-semibold align-top">Autoconsciência</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato mostra-se colaborativo(a) e receptivo(a) a sugestões do par. Reconhece quando não sabe algo ou está com dificuldades e pede ajuda de forma proativa.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato equilibra bem os momentos de codificar e de ouvir. Facilita a colaboração e garante que as ideias do par sejam ouvidas. Adapta seu estilo de comunicação ao do par.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato conduz a sessão de forma empática e produtiva, adaptando-se ao nível do par e promovendo uma troca genuína. Lidera a colaboração de forma eficaz.</td>
-                                    <td class="border border-gray-200 p-3 align-top">O candidato demonstra alto controle emocional, recebendo feedback ou sugestões de forma positiva e usando-as para melhorar a solução. Lidera com segurança, mas cria um ambiente onde o par se sente à vontade para contribuir e explorar ideias.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Responde bem a feedback construtivo ao longo da entrevista. Caso não termine o problema, tem em mente um plano do que fazer para continuar. Compartilha o que poderia ter sido feito de diferentes ou mais diversas formas. Não aceita o que o entrevistador advoga sem antes tentar influenciá-lo sobre a sua decisão/ideia. E faz isso de forma gentil e estratégica.</td>
+                                    <td class="border border-gray-200 p-3 font-semibold align-top">Comunicação e Colaboração</td>
+                                    <td class="border border-gray-200 p-3 align-top">Não se expressa claramente, tem dificuldade em interagir, não solicita ajuda e não busca informações.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Mostra-se colaborativo(a) e receptivo(a) a sugestões. Reconhece quando não sabe algo ou está com dificuldades e pede ajuda de forma proativa.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Equilibra bem os momentos de codificar e de ouvir. Facilita a colaboração e garante que as ideias do avaliador técnico sejam ouvidas. Adapta seu estilo de comunicação ao do par.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Conduz a sessão de forma empática e produtiva, adaptando-se ao nível do par e promovendo uma troca genuína. Lidera a colaboração de forma eficaz.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Demonstra alto controle emocional, recebendo feedback ou sugestões de forma positiva e usando-as para melhorar a solução. Lidera com segurança, mas cria um ambiente onde o par se sente à vontade para contribuir e explorar ideias.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Responde bem a feedback construtivo. Caso não termine o problema, tem em mente um plano do que fazer para continuar. Compartilha o que poderia ter sido feito de diferente. Não acata o que o entrevistador advoga sem antes tentar influenciá-lo sobre a sua ideia/opinião, e faz isso de forma gentil e estratégica.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -148,29 +207,34 @@
                             </thead>
                             <tbody class="text-gray-700">
                                 <tr class="border-b">
-                                    <td class="py-3 px-4 font-medium">Dev II</td>
-                                    <td class="py-3 px-4">(4-6 pontos)</td>
-                                    <td class="py-3 px-4">Fundamentos básicos. Necessita de orientação para executar tarefas.</td>
+                                    <td class="py-3 px-4 font-medium">Dev I</td>
+                                    <td class="py-3 px-4">(1-3 pontos)</td>
+                                    <td class="py-3 px-4">Fundamentos básicos, posições para se desenvolver.</td>
                                 </tr>
                                 <tr class="border-b bg-gray-50">
-                                    <td class="py-3 px-4 font-medium">Dev III</td>
-                                    <td class="py-3 px-4">(7-10 pontos)</td>
-                                    <td class="py-3 px-4">Bom conhecimento. Consegue trabalhar com autonomia em problemas definidos.</td>
+                                    <td class="py-3 px-4 font-medium">Dev II</td>
+                                    <td class="py-3 px-4">(4-7 pontos)</td>
+                                    <td class="py-3 px-4">Fundamentos básicos. Necessita de orientação para executar tarefas.</td>
                                 </tr>
                                 <tr class="border-b">
+                                    <td class="py-3 px-4 font-medium">Dev III</td>
+                                    <td class="py-3 px-4">(8-10 pontos)</td>
+                                    <td class="py-3 px-4">Bom conhecimento. Consegue trabalhar com autonomia em problemas definidos.</td>
+                                </tr>
+                                <tr class="border-b bg-gray-50">
                                     <td class="py-3 px-4 font-medium">Spec I</td>
                                     <td class="py-3 px-4">(11-14 pontos)</td>
                                     <td class="py-3 px-4">Domínio sólido dos conceitos. Lida com complexidade e demonstra proatividade.</td>
                                 </tr>
-                                <tr class="border-b bg-gray-50">
+                                <tr class="border-b">
                                     <td class="py-3 px-4 font-medium">Spec II</td>
                                     <td class="py-3 px-4">(15-17 pontos)</td>
                                     <td class="py-3 px-4">Profundo conhecimento técnico. Capaz de liderar tecnicamente e mentorar outros de forma eficaz.</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3 px-4 font-medium">Spec III</td>
+                                    <td class="py-3 px-4 font-medium">Spec III e Principal</td>
                                     <td class="py-3 px-4">(18-20 pontos)</td>
-                                    <td class="py-3 px-4">Padrão de excelência. Pensa de forma estratégica e sistêmica, influenciando as melhores práticas e servindo como inspiração para os demais.</td>
+                                    <td class="py-3 px-4">Padrão de excelência. Pensa de forma estratégica e sistêmica, influenciando as melhores práticas e é destaque.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -183,7 +247,7 @@
                 <section class="bg-white p-6 rounded-lg shadow-sm">
                     <h2 class="text-2xl font-bold mb-4 text-teal-700">O que é o System Design?</h2>
                     <p class="text-gray-700">
-                        É uma etapa crucial para avaliarmos as habilidades de arquitetura de software, capacidade de resolver um problema em tempo real, adaptabilidade e aptidão para colaborar na criação de soluções de negócio.
+                        A entrevista de System Design é uma etapa crucial para avaliarmos as habilidades de arquitetura de software dos candidatos(as), sua capacidade de resolver um problema em tempo real, sua adaptabilidade, sua aptidão para colaborar na criação de soluções de negócio e como criar um design de aplicação para resolver um problema de negócio.
                     </p>
                 </section>
 
@@ -191,20 +255,20 @@
                     <section class="bg-white p-6 rounded-lg shadow-sm">
                         <h3 class="text-xl font-bold mb-4 text-teal-700">Orientações Gerais para a Avaliação</h3>
                         <ul class="space-y-3 list-disc list-inside text-gray-700">
-                           <li><strong>Seja um guia, não um resolvedor:</strong> Seu papel é observar, fazer perguntas estratégicas e oferecer feedback construtivo. Evite "dar a resposta".</li>
-                            <li><strong>Não busque a "solução perfeita":</strong> O principal objetivo é identificar como o candidato pensa e age.</li>
-                            <li><strong>Incentive o diálogo:</strong> Faça perguntas que estimulem o(a) candidato(a) a explicar suas escolhas e desafios.</li>
-                            <li><strong>Adapte o desafio:</strong> Se o exercício for concluído rapidamente, aumente a complexidade do escopo para avaliar a adaptação.</li>
-                            <li><strong>Obrigação Mínima:</strong> O candidato deve realizar pelo menos uma das duas avaliações e atingir a nota mínima para o cargo.</li>
+                            <li><strong>Seja um guia, não um resolvedor:</strong> Seu papel é observar, fazer perguntas estratégicas e oferecer feedback construtivo. Evite "dar a resposta".</li>
+                            <li><strong>Não busque a "solução perfeita":</strong> O principal objetivo é identificar os pilares e entender como o candidato pensa e age.</li>
+                            <li><strong>Incentive o diálogo:</strong> Faça perguntas que estimulem o(a) candidato(a) a explicar suas escolhas, desafios e próximos passos.</li>
+                            <li><strong>Adapte o desafio:</strong> Se o exercício for concluído rapidamente, aumente a complexidade do escopo para avaliar a capacidade de adaptação.</li>
                         </ul>
                     </section>
                     <section class="bg-white p-6 rounded-lg shadow-sm">
                         <h3 class="text-xl font-bold mb-4 text-teal-700">Pilares Avaliados</h3>
                         <ul class="space-y-3 list-disc list-inside text-gray-700">
-                            <li><strong>Planejamento:</strong> Definição de escopo, requisitos e estruturação da abordagem.</li>
-                            <li><strong>Articulação do Pensamento:</strong> Clareza ao comunicar ideias, decisões e tradeoffs.</li>
-                            <li><strong>Habilidade para Adaptar:</strong> Flexibilidade para lidar com novas informações e mudanças de escopo.</li>
-                            <li><strong>Software Design:</strong> Profundidade técnica na criação de uma arquitetura robusta e escalável.</li>
+                            <li><strong>Planejamento:</strong> Como define objetivos, estrutura um caminho e organiza recursos.</li>
+                            <li><strong>Raciocínio Lógico e Articulação do Pensamento:</strong> Como compreende, estrutura e decompõe um problema.</li>
+                            <li><strong>Comunicação:</strong> Como expressa ideias, interage e solicita ajuda.</li>
+                            <li><strong>Adaptabilidade:</strong> Capacidade de se ajustar a mudanças, incertezas e novos desafios.</li>
+                            <li><strong>Software Design:</strong> Abordagens técnicas, padrões de código e consideração por escalabilidade, performance, segurança e testabilidade.</li>
                         </ul>
                     </section>
                 </div>
@@ -216,45 +280,50 @@
                             <thead class="bg-teal-50">
                                 <tr>
                                     <th class="border border-gray-300 p-3 font-semibold text-teal-800">Pilar</th>
-                                    <th class="border border-gray-300 p-3 font-semibold text-teal-800">Nível 1</th>
-                                    <th class="border border-gray-300 p-3 font-semibold text-teal-800">Nível 2</th>
-                                    <th class="border border-gray-300 p-3 font-semibold text-teal-800">Nível 3</th>
-                                    <th class="border border-gray-300 p-3 font-semibold text-teal-800">Nível 4</th>
-                                    <th class="border border-gray-300 p-3 font-semibold text-teal-800">Nível 5</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-teal-800">Nota 0</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-teal-800">Nota 1</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-teal-800">Nota 2</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-teal-800">Nota 3</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-teal-800">Nota 4</th>
+                                    <th class="border border-gray-300 p-3 font-semibold text-teal-800">Nota 5</th>
                                 </tr>
                             </thead>
                             <tbody class="text-sm text-gray-700">
-                                <tr class="bg-white">
+                                 <tr class="bg-white">
                                     <td class="border border-gray-200 p-3 font-semibold align-top">Planejamento</td>
-                                    <td class="border border-gray-200 p-3 align-top">Esforçou-se para entender o problema, mas fez poucas perguntas sobre requisitos. Raramente considerou aspectos de escalabilidade. Dividiu o problema em partes apenas após receber orientação.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Fez perguntas para entender o enunciado do problema, mas com menor profundidade em requisitos. Considerou aspectos de escalabilidade se provocado, mas sem iniciativa própria. Dividiu o problema em partes, com auxílio ou direcionamento do interlocutor.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Fez perguntas para entender requisitos principais do problema. Perguntou sobre fatores que pudessem impactar a escalabilidade, ainda que de forma menos detalhada. Fez suposições e validou com o interlocutor antes de avançar. Quebrou o problema em partes menores, mesmo que precisasse de leve orientação.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Fez perguntas com o objetivo de esclarecer os requisitos do problema. Perguntou sobre escalabilidade, capacidade necessária para atender à demanda. Fez suposições e validou com o entrevistador antes de seguir. Quebrou o problema em partes menores. Identificou as partes críticas (i.e. hot spots) do problema.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Antecipou e levantou requisitos não mencionados explicitamente, demonstrando visão holística (ex: requisitos de negócio, SLAs, planos de expansão). Validou restrições de longo prazo (e.g., compliance, custos, regulamentações) que influenciam a solução. Organizou a abordagem em etapas, explicando o roadmap do raciocínio para o entrevistador.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Não faz perguntas para entender o problema ou faz perguntas desconexas. Não demonstra ter um plano para a resolução.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Esforçou-se para entender, mas fez poucas perguntas e raramente considerou a escalabilidade. Dividiu o problema apenas com orientação.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Fez perguntas para entender o problema, mas com menor profundidade em requisitos. Considerou escalabilidade quando questionado, mas sem iniciativa. Dividiu o problema com auxílio.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Fez perguntas para entender os principais requisitos. Perguntou sobre fatores de escalabilidade de forma menos detalhada. Validou suposições e quebrou o problema em partes, mesmo com leve orientação.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Fez perguntas para esclarecer requisitos e capacidade. Perguntou sobre escalabilidade, validou suposições, quebrou o problema em partes e identificou as partes críticas (hot spots).</td>
+                                    <td class="border border-gray-200 p-3 align-top">Antecipou e levantou requisitos não mencionados, demonstrando visão holística (negócios, SLAs). Validou restrições de longo prazo (compliance, custos). Organizou a abordagem em etapas, explicando o roadmap do raciocínio.</td>
                                 </tr>
                                 <tr class="bg-gray-50">
-                                    <td class="border border-gray-200 p-3 font-semibold align-top">Articulação do Pensamento</td>
-                                    <td class="border border-gray-200 p-3 align-top">Expressou suas ideias de forma compreensível, mas com pausas longas ou insegurança. Explicou parte do raciocínio, mas não conseguiu articular toda a lógica. Precisou ser lembrado para falar em voz alta sobre o que estava fazendo.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Comunicou-se de forma compreensível, mas com momentos de confusão ou dispersão. Tentou explicar escolhas técnicas, mas por vezes de forma fragmentada. Precisou de estímulo para detalhar o que estava fazendo. Iniciando habilidades de mentoria, com insegurança.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Explicou conceitos técnicos com precisão razoável. Demonstrou habilidade para explicar a lógica das escolhas, mas com algumas hesitações. Explicou o que estava fazendo na maior parte do tempo. Mostrou habilidade inicial para mentorar, mas ainda em amadurecimento.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Conseguiu comunicar-se de forma sucinta, direta e efetiva. Conseguiu engajar o entrevistador na resolução do problema durante a entrevista. Demonstrou habilidades para transmitir conceitos técnicos complexos. Conseguiu quebrar o problema em partes menores e menos complexas, e explicou o processo enquanto o fazia.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Conduziu a entrevista como uma conversa estratégica, envolvendo o entrevistador ativamente na co-construção da solução. Explicou tradeoffs de forma proativa, incluindo impacto em negócios, experiência do usuário e operação. Demonstrou capacidade de simplificar explicações complexas sem perder a essência técnica.</td>
+                                    <td class="border border-gray-200 p-3 font-semibold align-top">Raciocínio Lógico e Articulação do Pensamento</td>
+                                    <td class="border border-gray-200 p-3 align-top">Não verbaliza o raciocínio, não consegue explicar escolhas ou intenções.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Expressou ideias de forma compreensível, mas com pausas longas ou insegurança. Explicou parte do raciocínio, mas não toda a lógica. Precisou ser estimulado para falar o que estava fazendo.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Comunicou-se de forma compreensível, mas com momentos de confusão. Tentou explicar escolhas de forma fragmentada. Precisou de estímulo para detalhar o que estava fazendo.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Explicou conceitos técnicos com precisão razoável e a lógica das escolhas, com algumas hesitações. Explicou o que estava fazendo na maior parte do tempo. Mostrou habilidade inicial para ensinar.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Expressou ideias de forma objetiva e efetiva. Engajou o entrevistador na resolução. Demonstrou habilidade para transmitir conceitos complexos, quebrar o problema em partes e articular a lógica por trás das escolhas.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Conduziu a entrevista como uma conversa estratégica, envolvendo o entrevistador. Explicou tradeoffs de forma precisa (impacto em negócios, UX). Simplificou explicações complexas. Compartilhou raciocínio de forma coesa.</td>
                                 </tr>
                                 <tr class="bg-white">
-                                    <td class="border border-gray-200 p-3 font-semibold align-top">Habilidade para Adaptar</td>
-                                    <td class="border border-gray-200 p-3 align-top">Mostrou dificuldade clara em lidar com novos requisitos, precisando de ajuda para se reorganizar. Receptividade com resistência inicial às mudanças.</td>
+                                    <td class="border border-gray-200 p-3 font-semibold align-top">Adaptabilidade</td>
+                                    <td class="border border-gray-200 p-3 align-top">Demonstrou dificuldade em lidar com mudanças de requisitos, mostra-se resistente a novas ideias.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Mostrou dificuldade clara em lidar com novos requisitos, precisando de ajuda para se reorganizar. Receptividade com resistência inicial.</td>
                                     <td class="border border-gray-200 p-3 align-top">Teve dificuldade inicial ao receber novos requisitos, mas ajustou-se com orientação. Receptivo a mudanças, mas perdeu clareza em alguns momentos.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Manteve a calma diante de novos requisitos, ainda que com leve dificuldade inicial para reorganizar o pensamento. Foi receptivo às mudanças, mas precisou de tempo para processar.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Não recuou quando novos requisitos e complexidades foram adicionados ao problema. Foi receptivo e reagiu bem sempre que as necessidades do problema foram modificadas.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Incorporou novos requisitos ou mudanças radicais de escopo sem perder a estrutura do design. Ajustou a proposta de forma lógica e segura, explicando claramente como as mudanças afetam todo o sistema. Demonstrou flexibilidade mental para abandonar ideias quando necessário, propondo alternativas sólidas.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Manteve a calma diante de novos requisitos, com leve dificuldade inicial para reorganizar. Foi receptivo, mas precisou de tempo para processar.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Não recuou quando novos requisitos e complexidades foram adicionados. Foi receptivo e reagiu bem sempre que as necessidades do problema foram modificadas.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Incorporou novos requisitos ou mudanças radicais sem perder a estrutura do design. Ajustou a proposta de forma lógica e segura, explicando o impacto. Demonstrou flexibilidade para abandonar ideias e propor alternativas.</td>
                                 </tr>
-                                <tr class="bg-gray-50">
+                                 <tr class="bg-gray-50">
                                     <td class="border border-gray-200 p-3 font-semibold align-top">Software Design</td>
-                                    <td class="border border-gray-200 p-3 align-top">Apresentou soluções diretas sem discutir tradeoffs. Reconheceu conceitos de arquitetura apenas superficialmente. Limitou-se a entender requisitos básicos. Desenhou fluxos simples, mas sem coesão em APIs. Não abordou escalabilidade.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Avaliou soluções em alto nível, mas sem detalhar tradeoffs. Reconheceu conceitos básicos (e.g., load balancer, cache) quando mencionados. Conseguiu levantar alguns requisitos funcionais, mas não-funcionais. Desenhou APIs de forma simplificada. Teve dificuldade em sugerir estratégias de escalabilidade.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Conseguiu discutir tradeoffs básicos (e.g. performance vs simplicidade). Demonstrou conhecimentos sólidos em conceitos de system design, mas menos fluência em detalhes avançados. Identificou expectativas de algumas features essenciais. Levantou requisitos principais como latência e throughput, ainda que não de forma completa. Desenhou high-level APIs com boa estrutura. Sugeriu estratégias de escalabilidade em nível mais geral.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Fez tradeoffs de soluções ao longo da entrevista (e.g. consistência vs availability, etc). Demonstrou fluência em conceitos de system design (e.g., DNS, CDN, Load balancer, cache, etc). Identificou expectativas de features que precisam ser atendidas. Identificou requisitos de latência, throughput. Desenhou high-level APIs. Escalou componentes individualmente.</td>
-                                    <td class="border border-gray-200 p-3 align-top">Avaliou e explicou tradeoffs avançados (ex.: quorum, modelos de consistência, estratégias de particionamento de dados). Incorporou requisitos não-funcionais avançados (ex.: compliance de dados, latência em múltiplas regiões, custos de operação em escala). Desenvolveu high-level APIs com foco em coesão, clareza de responsabilidades e facilidade de evolução. Discorreu sobre estratégias de monitoramento, observabilidade, segurança e tolerância a falhas em produção. Foi além do básico de system design, considerando integração com sistemas legados e estratégias de migração.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Não apresenta soluções, não demonstra conhecimento de conceitos básicos de arquitetura.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Apresentou soluções diretas sem discutir tradeoffs. Reconheceu conceitos de arquitetura superficialmente. Limitou-se a requisitos básicos e não abordou escalabilidade.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Avaliou soluções em alto nível, sem detalhar tradeoffs. Reconheceu conceitos básicos (load balancer, cache) quando mencionados. Teve dificuldade em sugerir estratégias de escalabilidade.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Discutiu tradeoffs básicos (performance vs simplicidade). Demonstrou conhecimentos sólidos em conceitos de system design, mas com menos fluência em detalhes avançados. Sugeriu estratégias de escalabilidade em nível geral.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Fez tradeoffs de soluções (consistência vs availability). Demonstrou fluência em conceitos de system design (DNS, CDN, Cache). Identificou requisitos de latência, throughput. Desenhou high-level APIs e escalou componentes.</td>
+                                    <td class="border border-gray-200 p-3 align-top">Avaliou e explicou tradeoffs avançados (quorum, consistência). Incorporou requisitos não-funcionais avançados (compliance, custos). Desenvolveu APIs com foco em coesão e evolução. Discorreu sobre monitoramento, observabilidade e segurança.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -275,12 +344,12 @@
                             <tbody class="text-gray-700">
                                 <tr class="border-b">
                                     <td class="py-3 px-4 font-medium">Dev III</td>
-                                    <td class="py-3 px-4">(4-6 pontos)</td>
+                                    <td class="py-3 px-4">(4-7 pontos)</td>
                                     <td class="py-3 px-4">Fundamentos básicos. Necessita de orientação para executar tarefas.</td>
                                 </tr>
                                 <tr class="border-b bg-gray-50">
                                     <td class="py-3 px-4 font-medium">Spec I</td>
-                                    <td class="py-3 px-4">(7-10 pontos)</td>
+                                    <td class="py-3 px-4">(8-10 pontos)</td>
                                     <td class="py-3 px-4">Bom conhecimento. Consegue trabalhar com autonomia em problemas definidos.</td>
                                 </tr>
                                 <tr class="border-b">
@@ -291,12 +360,17 @@
                                 <tr class="border-b bg-gray-50">
                                     <td class="py-3 px-4 font-medium">Spec III</td>
                                     <td class="py-3 px-4">(15-17 pontos)</td>
-                                    <td class="py-3 px-4">Profundo conhecimento técnico. Capaz de liderar taticamente e mentorar outros de forma eficaz.</td>
+                                    <td class="py-3 px-4">Profundo conhecimento técnico. Capaz de liderar tecnicamente e mentorar outros.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-3 px-4 font-medium">Principal</td>
+                                    <td class="py-3 px-4">(18-25 pontos)</td>
+                                    <td class="py-3 px-4">Padrão de excelência. Pensa de forma estratégica e sistêmica, influenciando as melhores práticas.</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3 px-4 font-medium">Principal</td>
-                                    <td class="py-3 px-4">(18-20 pontos)</td>
-                                    <td class="py-3 px-4">Padrão de excelência. Pensa de forma estratégica e sistêmica, influenciando as melhores práticas e servindo como inspiração.</td>
+                                    <td class="py-3 px-4 font-medium">Tech Manager I & II</td>
+                                    <td class="py-3 px-4">(8-14 pontos)</td>
+                                    <td class="py-3 px-4">Possui bom conhecimento. Lida com complexidade e demonstra proatividade. Confortável em conversas técnicas.</td>
                                 </tr>
                             </tbody>
                         </table>
